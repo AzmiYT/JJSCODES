@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azmi Hub</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(-45deg,#0f0c29,#302b63,#24243e,#0f2027);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    color:white;
+    overflow-x:hidden;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:0;
+}
+
+.particle{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+    opacity:.4;
+    animation:float linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    backdrop-filter:blur(15px);
+    background:rgba(0,0,0,0.2);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:bold;
+    color:cyan;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:cyan;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:5rem;
+    text-shadow:0 0 25px cyan;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 15px cyan;
+    }
+    to{
+        text-shadow:0 0 40px cyan;
+    }
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.3rem;
+}
+
+.btn{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:linear-gradient(45deg,cyan,purple);
+    color:white;
+    font-size:1rem;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+.section{
+    padding:80px 10%;
+    position:relative;
+    z-index:2;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:3rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:25px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.post{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.download-btn{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:cyan;
+    color:black;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:rgba(0,0,0,0.2);
+    margin-top:50px;
+}
+
+.counter{
+    font-size:3rem;
+    color:cyan;
+    text-align:center;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="particles"></div>
+
+<header>
+    <div class="logo">AZMI HUB</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#content">Content</a>
+        <a href="#updates">Updates</a>
+        <a href="#downloads">Downloads</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>AZMI HUB</h1>
+    <p>Exclusive content for subscribers.</p>
+    <button class="btn">Join Community</button>
+
+    <div class="counter" id="subCount">0</div>
+    <p>Subscribers</p>
+</section>
+
+<section class="section" id="content">
+    <h2>Featured Content</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>📢 Announcements</h3>
+            <p>Stay updated with the latest news.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎥 Videos</h3>
+            <p>Exclusive subscriber videos.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎮 Roblox Assets</h3>
+            <p>Maps, scripts and game resources.</p>
+        </div>
+
+        <div class="card">
+            <h3>💬 Community</h3>
+            <p>Talk with other subscribers.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="updates">
+    <h2>Latest Updates</h2>
+
+    <div class="post">
+        <h3>🔥 New Upload</h3>
+        <p>
+            Just released new subscriber content.
+            Check the downloads section below.
+        </p>
+    </div>
+
+    <div class="post">
+        <h3>🚀 Project Update</h3>
+        <p>
+            New Roblox project currently in development.
+            Sneak peeks coming soon.
+        </p>
+    </div>
+</section>
+
+<section class="section" id="downloads">
+    <h2>Downloads</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>📂 Resource Pack</h3>
+            <p>Exclusive subscriber download.</p>
+            <button class="download-btn">Download</button>
+        </div>
+
+        <div class="card">
+            <h3>📜 Script Pack</h3>
+            <p>Latest scripts for supporters.</p>
+            <button class="download-btn">Download</button>
+        </div>
+
+        <div class="card">
+            <h3>🎨 Assets Pack</h3>
+            <p>Models, icons and UI assets.</p>
+            <button class="download-btn">Download</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Azmi Hub | All Rights Reserved
+</footer>
+
+<script>
+const particles = document.querySelector(".particles");
+
+for(let i=0;i<120;i++){
+    const p = document.createElement("div");
+
+    p.classList.add("particle");
+
+    const size = Math.random()*8+2;
+
+    p.style.width = size + "px";
+    p.style.height = size + "px";
+
+    p.style.left = Math.random()*100 + "%";
+
+    p.style.animationDuration =
+        (Math.random()*10+5) + "s";
+
+    p.style.animationDelay =
+        Math.random()*5 + "s";
+
+    particles.appendChild(p);
+}
+
+let count = 0;
+const target = 10000;
+const counter = document.getElementById("subCount");
+
+const interval = setInterval(function(){
+
+    count += 50;
+
+    counter.innerText =
+        count.toLocaleString();
+
+    if(count >= target){
+        clearInterval(interval);
+    }
+
+},10);
+</script>
+
+</body>
+</html>
